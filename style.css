@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    font-size: 30px;
+    line-height: 27px;
+    font-weight: 500;
+    font-family: 'DM Sans';
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display: grid;
+    gap: 25px;
+    grid-template-rows: repeat(10, 50px);
+    grid-template-columns: repeat(4, 200px);
+    grid-template-areas: 
+        'top-left     top            top               top-right'
+        'top-left     top            top               top-right'
+        'top-left     top            top               top-right'
+        'top-left     top            top               top-right'
+        'top-left     middle-left    middle-right      top-right'
+        'btm-left     middle-left    middle-right      top-right'
+        'btm-left     middle-left    middle-right      top-right'
+        'btm-left     btm            btm-right         btm-right'
+        'btm-left     btm            btm-right         btm-right'
+        'btm-left     btm            btm-right         btm-right';
+}
+
+section > div{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgb(241, 91, 86);
+    padding: 18px;
+}
+
+img{
+    width: 180px;
+}
+
+#top{
+    grid-area: top;
+    align-items: center;
+    text-align: center;
+}
+
+#top-left{
+    grid-area: top-left;
+    background-color: hsl(31, 66%, 93%);
+}
+
+#top-right{
+    grid-area: top-right;
+    justify-content: space-around;
+    background-color: hsl(254, 88%, 90%);
+}
+
+#top-left, #top{
+    justify-content: center;
+}
+
+#top span{
+    color: hsl(39, 100%, 71%);
+}
+
+#top-left i{
+    color: hsl(256, 67%, 59%);
+}
+
+#middle-left{
+    grid-area: middle-left;
+}
+
+#middle-right{
+    grid-area: middle-right;
+    position: relative;
+    align-items: center;
+}
+
+#middle-left, #middle-right, #top-right{
+    font-size: 22px;
+    line-height: 20px;
+}
+
+#middle-left, #btm-left, #btm-right, #btm{
+    justify-content: space-between;
+}
+
+#btm{
+    grid-area: btm;
+}
+
+#btm-left{
+    grid-area: btm-left;
+}
+
+#btm-right{
+    grid-area: btm-right;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#top, #btm-right{
+    background-color: hsl(256, 67%, 59%);
+    color: white;
+}
+
+#middle-left, #btm{
+    background-color: white;
+}
+
+#btm-left, #middle-right{
+    background-color: hsl(39, 100%, 71%);
+}
+
+#big-font-size{
+    margin-bottom: 15px;
+}
+
+#big-font-size, #btm{
+    font-size: 50px;
+    line-height: 45px;
+}
+
+.sml-font-size{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1em;
+}
+
+#top-right-img{
+    width: 290px;
+}
+
+#top-left-img{
+    width: 150px;
+    margin-top: 15px;
+}
+
+#middle-right-img{
+    width: 165px;
+    position: absolute;
+    bottom: -50px;
+}
+
+#btm-img{
+    width: 150px;
+}
+
+#middle-left-img{
+    width: 240px;
+    margin-left: 5px;
+}
+
+#btm-left-img{
+    max-inline-size: 100%;
+}
+
+
+@media screen and (max-width: 875px) {
+    body{
+        font-size: 20px;
+    }
+
+    section{
+        grid-template-areas: 
+        'top'
+        'middle-left'
+        'middle-right'
+        'top-right'
+        'btm-right'
+        'btm'
+        'top-left'
+        'btm-left'
+        ;
+
+        grid-template-rows: repeat(2, auto) 168px repeat(5, auto);
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    section > div{
+        gap: 20px 0;
+    }
+
+    #big-font-size{
+        font-size: 40px;
+    }
+
+    #top-right{
+        align-items: center;
+    }
+
+    #top-right p:last-child{
+        text-align: center;
+    }
+
+    #middle-right{
+        align-items: flex-start;
+    }
+
+    #middle-right-img{
+        position: static;
+    }
+
+    #btm-right{
+        flex-direction: column;
+        text-align: center;
+    }
+}
